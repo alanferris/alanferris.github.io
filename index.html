@@ -105,11 +105,11 @@
 
         .nav-menu .chevron {
             font-size: 12px;
-            transition: transform 0.3s ease;
+            transition: all 0.3s ease;
         }
 
         .nav-menu a.active .chevron {
-            transform: rotate(180deg);
+            transform: rotate(45deg);
         }
 
         /* Submenu styles */
@@ -391,7 +391,7 @@
             <ul class="nav-menu">
                 <li>
                     <a href="#" class="nav-link active" data-section="articles">
-                        Articles <i class="fas fa-chevron-down chevron"></i>
+                        Articles <span class="chevron">↗</span>
                     </a>
                     <div class="submenu active" id="articles-submenu">
                         <a href="#" onclick="scrollToElement('article-1')">
@@ -402,7 +402,7 @@
                 </li>
                 <li>
                     <a href="#" class="nav-toggle" data-submenu="startup-submenu">
-                        Startup <i class="fas fa-chevron-down chevron"></i>
+                        Startup <span class="chevron"><i class="fas fa-chevron-down"></i></span>
                     </a>
                     <div class="submenu" id="startup-submenu">
                         <a href="https://agtapp.com" target="_blank">
@@ -417,7 +417,7 @@
                 </li>
                 <li>
                     <a href="#" class="nav-toggle" data-submenu="books-submenu">
-                        Books <i class="fas fa-chevron-down chevron"></i>
+                        Books <span class="chevron"><i class="fas fa-chevron-down"></i></span>
                     </a>
                     <div class="submenu" id="books-submenu">
                         <a href="https://www.amazon.com/dp/B0FFNCRFP4" target="_blank">
@@ -428,7 +428,7 @@
                 </li>
                 <li>
                     <a href="#" class="nav-toggle" data-submenu="podcast-submenu">
-                        Podcast <i class="fas fa-chevron-down chevron"></i>
+                        Podcast <span class="chevron"><i class="fas fa-chevron-down"></i></span>
                     </a>
                     <div class="submenu" id="podcast-submenu">
                         <a href="#" onclick="alert('Podcast coming soon!')">
@@ -518,10 +518,10 @@
             
             if (submenu.classList.contains('active')) {
                 submenu.classList.remove('active');
-                chevron.style.transform = 'rotate(0deg)';
+                chevron.innerHTML = '<i class="fas fa-chevron-down"></i>';
             } else {
                 submenu.classList.add('active');
-                chevron.style.transform = 'rotate(180deg)';
+                chevron.innerHTML = '↗';
             }
         }
 
@@ -624,7 +624,8 @@
                     overlay.classList.remove('active');
                 }
             }
-        });
+        }
+    });
     </script>
 </body>
 </html>
