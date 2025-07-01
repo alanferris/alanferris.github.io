@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alan Ferris</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Times+New+Roman:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -42,26 +45,24 @@
             width: 120px;
             height: 120px;
             border-radius: 50%;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            background-image: url('https://yt3.googleusercontent.com/SUB3aZm35eDVsvii14SbzUBvHaBUz9wQreowrjakDU6f235e9r3Yd-BPCXm29ASqIE_O254p0g=s160-c-k-c0x00ffffff-no-rj');
+            background-size: cover;
+            background-position: center;
             margin: 0 auto 20px;
-            color: white;
-            font-size: 48px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.05);
         }
 
         .profile h1 {
+            font-family: 'Times New Roman', serif;
             font-size: 28px;
             font-weight: 600;
             margin-bottom: 8px;
             color: #1a202c;
-        }
-
-        .profile p {
-            color: #718096;
-            font-size: 16px;
-            margin-bottom: 20px;
         }
 
         .nav-menu {
@@ -76,6 +77,7 @@
         .nav-menu a {
             display: flex;
             align-items: center;
+            justify-content: space-between;
             padding: 12px 16px;
             color: #4a5568;
             text-decoration: none;
@@ -86,14 +88,17 @@
 
         .nav-menu a:hover,
         .nav-menu a.active {
-            background: #f7fafc;
-            color: #667eea;
+            background: #f0f4ff;
+            color: #007AFF;
         }
 
-        .nav-menu i {
-            margin-right: 12px;
-            width: 20px;
-            text-align: center;
+        .nav-menu .chevron {
+            font-size: 12px;
+            transition: transform 0.3s ease;
+        }
+
+        .nav-menu a.active .chevron {
+            transform: rotate(180deg);
         }
 
         .social-links {
@@ -128,7 +133,7 @@
         }
 
         .social-list a:hover {
-            background: #667eea;
+            background: #007AFF;
             color: white;
             transform: translateY(-2px);
         }
@@ -145,114 +150,6 @@
             padding: 40px 30px;
         }
 
-        /* Header */
-        .page-header {
-            margin-bottom: 50px;
-        }
-
-        .page-title {
-            font-size: 36px;
-            font-weight: 700;
-            color: #1a202c;
-            margin-bottom: 15px;
-        }
-
-        .page-subtitle {
-            font-size: 18px;
-            color: #718096;
-            line-height: 1.6;
-        }
-
-        /* Write Section */
-        .write-section {
-            background: white;
-            border-radius: 12px;
-            padding: 30px;
-            margin-bottom: 40px;
-            border: 1px solid #e1e5e9;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-        }
-
-        .write-section.hidden {
-            display: none;
-        }
-
-        .write-section h2 {
-            font-size: 24px;
-            margin-bottom: 20px;
-            color: #1a202c;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
-            color: #4a5568;
-        }
-
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px 16px;
-            border: 1px solid #e1e5e9;
-            border-radius: 8px;
-            font-size: 16px;
-            transition: border-color 0.3s ease;
-        }
-
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: #667eea;
-            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 200px;
-            font-family: inherit;
-        }
-
-        .btn {
-            padding: 12px 24px;
-            border: none;
-            border-radius: 8px;
-            font-size: 16px;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .btn-primary {
-            background: #667eea;
-            color: white;
-        }
-
-        .btn-primary:hover {
-            background: #5a67d8;
-            transform: translateY(-1px);
-        }
-
-        .btn-secondary {
-            background: #f7fafc;
-            color: #4a5568;
-            border: 1px solid #e1e5e9;
-        }
-
-        .btn-secondary:hover {
-            background: #edf2f7;
-        }
-
         /* Articles Section */
         .articles-section {
             background: white;
@@ -266,16 +163,11 @@
             display: none;
         }
 
-        .section-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 30px;
-        }
-
         .section-header h2 {
-            font-size: 24px;
+            font-family: 'Times New Roman', serif;
+            font-size: 32px;
             color: #1a202c;
+            margin-bottom: 30px;
         }
 
         .article-card {
@@ -311,7 +203,8 @@
         }
 
         .article-title {
-            font-size: 20px;
+            font-family: 'Times New Roman', serif;
+            font-size: 24px;
             font-weight: 600;
             color: #1a202c;
             margin-bottom: 10px;
@@ -323,7 +216,7 @@
         }
 
         .article-title a:hover {
-            color: #667eea;
+            color: #007AFF;
         }
 
         .article-excerpt {
@@ -361,6 +254,156 @@
             color: #e53e3e;
         }
 
+        /* Books Section */
+        .books-section {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            border: 1px solid #e1e5e9;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .books-section.hidden {
+            display: none;
+        }
+
+        .books-section h2 {
+            font-family: 'Times New Roman', serif;
+            font-size: 32px;
+            color: #1a202c;
+            margin-bottom: 30px;
+        }
+
+        .book-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 20px;
+            border: 1px solid #e1e5e9;
+            border-radius: 8px;
+            background: #fafafa;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .book-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            background: white;
+        }
+
+        .book-icon {
+            font-size: 48px;
+            color: #007AFF;
+        }
+
+        .book-info h3 {
+            font-family: 'Times New Roman', serif;
+            font-size: 20px;
+            font-weight: 600;
+            color: #1a202c;
+            margin-bottom: 5px;
+        }
+
+        .book-info p {
+            color: #718096;
+            font-size: 14px;
+        }
+
+        /* Podcast Section */
+        .podcast-section {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            border: 1px solid #e1e5e9;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .podcast-section.hidden {
+            display: none;
+        }
+
+        .podcast-section h2 {
+            font-family: 'Times New Roman', serif;
+            font-size: 32px;
+            color: #1a202c;
+            margin-bottom: 30px;
+        }
+
+        .podcast-content {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .podcast-icon {
+            font-size: 64px;
+            color: #007AFF;
+            margin-bottom: 20px;
+        }
+
+        .podcast-content p {
+            color: #718096;
+            font-size: 16px;
+        }
+
+        /* Startup Section */
+        .startup-section {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            border: 1px solid #e1e5e9;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .startup-section.hidden {
+            display: none;
+        }
+
+        .startup-section h2 {
+            font-family: 'Times New Roman', serif;
+            font-size: 32px;
+            color: #1a202c;
+            margin-bottom: 30px;
+        }
+
+        .startup-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .startup-card {
+            border: 1px solid #e1e5e9;
+            border-radius: 8px;
+            padding: 25px;
+            background: #fafafa;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .startup-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            background: white;
+        }
+
+        .startup-card h3 {
+            font-family: 'Times New Roman', serif;
+            font-size: 20px;
+            font-weight: 600;
+            color: #1a202c;
+            margin-bottom: 10px;
+        }
+
+        .startup-card p {
+            color: #718096;
+            line-height: 1.6;
+        }
+
         /* About Section */
         .about-section {
             background: white;
@@ -374,15 +417,17 @@
             display: none;
         }
 
+        .about-content h2 {
+            font-family: 'Times New Roman', serif;
+            font-size: 32px;
+            color: #1a202c;
+            margin-bottom: 20px;
+        }
+
         .about-content {
             font-size: 16px;
             line-height: 1.7;
             color: #4a5568;
-        }
-
-        .about-content h2 {
-            color: #1a202c;
-            margin-bottom: 20px;
         }
 
         .about-content p {
@@ -406,12 +451,16 @@
                 padding: 20px 15px;
             }
 
-            .page-title {
-                font-size: 28px;
+            .section-header h2 {
+                font-size: 24px;
             }
 
             .social-list {
                 justify-content: center;
+            }
+
+            .startup-grid {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -422,7 +471,7 @@
             top: 20px;
             left: 20px;
             z-index: 1001;
-            background: #667eea;
+            background: #007AFF;
             color: white;
             border: none;
             width: 50px;
@@ -461,23 +510,26 @@
     <!-- Sidebar -->
     <aside class="sidebar" id="sidebar">
         <div class="profile">
-            <div class="profile-img">
-                <i class="fas fa-user"></i>
-            </div>
+            <div class="profile-img" onclick="window.open('https://yt3.googleusercontent.com/SUB3aZm35eDVsvii14SbzUBvHaBUz9wQreowrjakDU6f235e9r3Yd-BPCXm29ASqIE_O254p0g=s160-c-k-c0x00ffffff-no-rj', '_blank')"></div>
             <h1>Alan Ferris</h1>
-            <p>CEO & Business Strategist</p>
         </div>
 
         <nav>
             <ul class="nav-menu">
                 <li><a href="#" class="nav-link active" data-section="articles">
-                    <i class="fas fa-newspaper"></i> Articles
+                    Articles <i class="fas fa-chevron-down chevron"></i>
                 </a></li>
-                <li><a href="#" class="nav-link" data-section="write">
-                    <i class="fas fa-pen"></i> Write
+                <li><a href="#" class="nav-link" data-section="books">
+                    Books <i class="fas fa-chevron-down chevron"></i>
+                </a></li>
+                <li><a href="#" class="nav-link" data-section="podcast">
+                    Podcast <i class="fas fa-chevron-down chevron"></i>
+                </a></li>
+                <li><a href="#" class="nav-link" data-section="startup">
+                    Startup <i class="fas fa-chevron-down chevron"></i>
                 </a></li>
                 <li><a href="#" class="nav-link" data-section="about">
-                    <i class="fas fa-user-circle"></i> About
+                    About <i class="fas fa-chevron-down chevron"></i>
                 </a></li>
             </ul>
         </nav>
@@ -508,9 +560,6 @@
             <section class="articles-section" id="articles-section">
                 <div class="section-header">
                     <h2>Latest Articles</h2>
-                    <button class="btn btn-primary" onclick="showSection('write')">
-                        <i class="fas fa-plus"></i> New Article
-                    </button>
                 </div>
 
                 <div id="articles-container">
@@ -520,10 +569,10 @@
                             <span class="article-category">Leadership</span>
                         </div>
                         <h3 class="article-title">
-                            <a href="article.html">The Future of Leadership in the Digital Age</a>
+                            <a href="#" onclick="viewArticle('The Future of Leadership in the Digital Age')">The Future of Leadership in the Digital Age</a>
                         </h3>
                         <p class="article-excerpt">
-                            In an increasingly connected world, leaders must evolve and adapt their strategies to inspire remote teams and build strong corporate cultures...
+                            In an increasingly connected world, leaders must evolve and adapt their strategies to inspire remote teams and build strong corporate cultures. The digital transformation has fundamentally changed how we communicate, collaborate, and create value in organizations.
                         </p>
                         <div class="article-actions">
                             <button class="action-btn like-btn" onclick="toggleLike(this)">
@@ -534,91 +583,47 @@
                             </button>
                         </div>
                     </article>
-
-                    <article class="article-card">
-                        <div class="article-meta">
-                            <span><i class="fas fa-calendar"></i> January 8, 2025</span>
-                            <span class="article-category">Innovation</span>
-                        </div>
-                        <h3 class="article-title">
-                            <a href="article.html">Building Teams That Transform Industries</a>
-                        </h3>
-                        <p class="article-excerpt">
-                            The key to business success isn't just in technology, but in people. Discover how to form teams that don't just execute, but innovate and transform...
-                        </p>
-                        <div class="article-actions">
-                            <button class="action-btn like-btn" onclick="toggleLike(this)">
-                                <i class="far fa-heart"></i> <span>47</span>
-                            </button>
-                            <button class="action-btn" onclick="shareArticle('Building Teams That Transform Industries')">
-                                <i class="fas fa-share"></i> Share
-                            </button>
-                        </div>
-                    </article>
-
-                    <article class="article-card">
-                        <div class="article-meta">
-                            <span><i class="fas fa-calendar"></i> January 2, 2025</span>
-                            <span class="article-category">Strategy</span>
-                        </div>
-                        <h3 class="article-title">
-                            <a href="article.html">Simplicity as a Competitive Advantage</a>
-                        </h3>
-                        <p class="article-excerpt">
-                            In a complex world, simplicity becomes the most powerful differentiator. Learn how to apply simple design principles to business strategy...
-                        </p>
-                        <div class="article-actions">
-                            <button class="action-btn like-btn" onclick="toggleLike(this)">
-                                <i class="far fa-heart"></i> <span>63</span>
-                            </button>
-                            <button class="action-btn" onclick="shareArticle('Simplicity as a Competitive Advantage')">
-                                <i class="fas fa-share"></i> Share
-                            </button>
-                        </div>
-                    </article>
                 </div>
             </section>
 
-            <!-- Write Section -->
-            <section class="write-section hidden" id="write-section">
-                <h2><i class="fas fa-pen"></i> Write New Article</h2>
-                <form id="article-form">
-                    <div class="form-group">
-                        <label for="article-title">Title</label>
-                        <input type="text" id="article-title" name="title" placeholder="Enter article title..." required>
+            <!-- Books Section -->
+            <section class="books-section hidden" id="books-section">
+                <h2>Books</h2>
+                <a href="https://www.amazon.com/dp/B0FFNCRFP4" class="book-item" target="_blank">
+                    <div class="book-icon">
+                        <i class="fas fa-book"></i>
                     </div>
-                    
-                    <div class="form-group">
-                        <label for="article-category">Category</label>
-                        <select id="article-category" name="category" required>
-                            <option value="">Select category...</option>
-                            <option value="Leadership">Leadership</option>
-                            <option value="Innovation">Innovation</option>
-                            <option value="Strategy">Strategy</option>
-                            <option value="Technology">Technology</option>
-                            <option value="Business">Business</option>
-                        </select>
+                    <div class="book-info">
+                        <h3>AI Speaks. The World Listens.</h3>
+                        <p>Available on Amazon Kindle</p>
                     </div>
+                </a>
+            </section>
 
-                    <div class="form-group">
-                        <label for="article-excerpt">Excerpt</label>
-                        <textarea id="article-excerpt" name="excerpt" placeholder="Brief description of the article..." rows="3" required></textarea>
+            <!-- Podcast Section -->
+            <section class="podcast-section hidden" id="podcast-section">
+                <h2>Podcast</h2>
+                <div class="podcast-content">
+                    <div class="podcast-icon">
+                        <i class="fas fa-microphone"></i>
                     </div>
+                    <p>Coming soon... Stay tuned for insights on leadership, innovation, and the future of business.</p>
+                </div>
+            </section>
 
-                    <div class="form-group">
-                        <label for="article-content">Content</label>
-                        <textarea id="article-content" name="content" placeholder="Write your article here..." rows="15" required></textarea>
-                    </div>
-
-                    <div style="display: flex; gap: 15px;">
-                        <button type="submit" class="btn btn-primary">
-                            <i class="fas fa-save"></i> Publish Article
-                        </button>
-                        <button type="button" class="btn btn-secondary" onclick="clearForm()">
-                            <i class="fas fa-trash"></i> Clear
-                        </button>
-                    </div>
-                </form>
+            <!-- Startup Section -->
+            <section class="startup-section hidden" id="startup-section">
+                <h2>Startup Ecosystem</h2>
+                <div class="startup-grid">
+                    <a href="https://agtapp.com" class="startup-card" target="_blank">
+                        <h3>AGTApp</h3>
+                        <p>Our flagship AI ecosystem platform that connects intelligent agents and transforms how businesses operate in the digital age.</p>
+                    </a>
+                    <a href="https://directiveai.org" class="startup-card" target="_blank">
+                        <h3>DirectiveAI</h3>
+                        <p>The organization behind the innovation. We're building the future of artificial intelligence and its practical applications for businesses.</p>
+                    </a>
+                </div>
             </section>
 
             <!-- About Section -->
@@ -626,17 +631,16 @@
                 <div class="about-content">
                     <h2>About Alan Ferris</h2>
                     <p>
-                        CEO and business strategist with over a decade of experience leading teams and transforming organizations. 
-                        My approach focuses on simplicity, innovation, and developing corporate cultures that inspire.
+                        Entrepreneur and thought leader with over a decade of experience transforming organizations through technology and innovation. 
+                        My approach focuses on simplicity, strategic vision, and developing cultures that inspire breakthrough results.
                     </p>
                     <p>
-                        I firmly believe that future leadership requires empathy, strategic vision, and the ability to simplify 
-                        complexity to create real value. Through this blog, I share insights on leadership, innovation, 
-                        and the future of business.
+                        I firmly believe that the future belongs to leaders who can bridge the gap between human potential and artificial intelligence. 
+                        Through my writing, speaking, and entrepreneurial ventures, I explore how businesses can thrive in an AI-driven world.
                     </p>
                     <p>
-                        When I'm not working on strategy or writing, you can find me exploring new technologies, 
-                        mentoring young entrepreneurs, or reading about emerging trends that will shape our future.
+                        Currently building the next generation of AI tools through DirectiveAI and AGTApp, while mentoring entrepreneurs and 
+                        sharing insights on the intersection of leadership, technology, and human potential.
                     </p>
                 </div>
             </section>
@@ -647,7 +651,7 @@
         // Navigation functionality
         function showSection(sectionName) {
             // Hide all sections
-            document.querySelectorAll('.articles-section, .write-section, .about-section').forEach(section => {
+            document.querySelectorAll('.articles-section, .books-section, .podcast-section, .startup-section, .about-section').forEach(section => {
                 section.classList.add('hidden');
             });
             
@@ -670,55 +674,7 @@
             });
         });
 
-        // Article form functionality
-        document.getElementById('article-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const title = document.getElementById('article-title').value;
-            const category = document.getElementById('article-category').value;
-            const excerpt = document.getElementById('article-excerpt').value;
-            const content = document.getElementById('article-content').value;
-            
-            // Create new article element
-            const articleCard = document.createElement('article');
-            articleCard.className = 'article-card';
-            articleCard.innerHTML = `
-                <div class="article-meta">
-                    <span><i class="fas fa-calendar"></i> ${new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
-                    <span class="article-category">${category}</span>
-                </div>
-                <h3 class="article-title">
-                    <a href="#" onclick="viewArticle('${title}', '${content}')">${title}</a>
-                </h3>
-                <p class="article-excerpt">${excerpt}</p>
-                <div class="article-actions">
-                    <button class="action-btn like-btn" onclick="toggleLike(this)">
-                        <i class="far fa-heart"></i> <span>0</span>
-                    </button>
-                    <button class="action-btn" onclick="shareArticle('${title}')">
-                        <i class="fas fa-share"></i> Share
-                    </button>
-                </div>
-            `;
-            
-            // Add to articles container at the top
-            const container = document.getElementById('articles-container');
-            container.insertBefore(articleCard, container.firstChild);
-            
-            // Clear form and switch to articles view
-            clearForm();
-            showSection('articles');
-            
-            // Show success message
-            alert('Article published successfully!');
-        });
-
-        function clearForm() {
-            document.getElementById('article-form').reset();
-        }
-
-        function viewArticle(title, content) {
-            // For now, just show an alert. In a real implementation, you'd navigate to a full article page
+        function viewArticle(title) {
             alert(`Viewing: ${title}\n\nIn a real implementation, this would open the full article page.`);
         }
 
