@@ -132,11 +132,19 @@
             color: #718096;
             margin: 0;
             border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
 
         .submenu a:hover {
             background: #e2e8f0;
             color: #4a5568;
+        }
+
+        .submenu .arrow {
+            font-size: 12px;
+            transform: rotate(45deg);
         }
 
         .social-links {
@@ -210,20 +218,16 @@
             letter-spacing: -0.5px;
         }
 
-        /* Articles Section */
-        .article-card {
-            border: 1px solid #e1e5e9;
-            border-radius: 8px;
-            padding: 25px;
-            margin-bottom: 20px;
-            transition: all 0.3s ease;
-            background: #fafafa;
-            scroll-margin-top: 100px;
+        /* Articles Section - No more nested cards */
+        .article-item {
+            padding: 25px 0;
+            border-bottom: 1px solid #e1e5e9;
+            margin-bottom: 25px;
         }
 
-        .article-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        .article-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
         }
 
         .article-meta {
@@ -296,115 +300,6 @@
             color: #e53e3e;
         }
 
-        /* Books Section */
-        .book-item {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            padding: 20px;
-            border: 1px solid #e1e5e9;
-            border-radius: 8px;
-            background: #fafafa;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            text-decoration: none;
-            color: inherit;
-            margin-bottom: 15px;
-            scroll-margin-top: 100px;
-        }
-
-        .book-item:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            background: white;
-        }
-
-        .book-icon {
-            font-size: 48px;
-            color: #007AFF;
-        }
-
-        .book-info h3 {
-            font-family: 'Crimson Text', serif;
-            font-size: 20px;
-            font-weight: 600;
-            color: #1a202c;
-            margin-bottom: 5px;
-        }
-
-        .book-info p {
-            color: #718096;
-            font-size: 14px;
-        }
-
-        /* Startup Section */
-        .startup-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-
-        .startup-card {
-            border: 1px solid #e1e5e9;
-            border-radius: 8px;
-            padding: 25px;
-            background: #fafafa;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            text-decoration: none;
-            color: inherit;
-            scroll-margin-top: 100px;
-        }
-
-        .startup-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            background: white;
-        }
-
-        .startup-card h3 {
-            font-family: 'Crimson Text', serif;
-            font-size: 20px;
-            font-weight: 600;
-            color: #1a202c;
-            margin-bottom: 10px;
-        }
-
-        .startup-card p {
-            color: #718096;
-            line-height: 1.6;
-        }
-
-        /* Podcast Section */
-        .podcast-content {
-            text-align: center;
-            padding: 40px 20px;
-            scroll-margin-top: 100px;
-        }
-
-        .podcast-icon {
-            font-size: 64px;
-            color: #007AFF;
-            margin-bottom: 20px;
-        }
-
-        .podcast-content p {
-            color: #718096;
-            font-size: 16px;
-        }
-
-        /* About Section */
-        .about-content {
-            font-size: 16px;
-            line-height: 1.7;
-            color: #4a5568;
-            scroll-margin-top: 100px;
-        }
-
-        .about-content p {
-            margin-bottom: 20px;
-        }
-
         /* Mobile Responsive */
         .mobile-toggle {
             display: none;
@@ -474,10 +369,6 @@
             .social-list {
                 justify-content: center;
             }
-
-            .startup-grid {
-                grid-template-columns: 1fr;
-            }
         }
     </style>
 </head>
@@ -503,40 +394,47 @@
                         Articles <i class="fas fa-chevron-down chevron"></i>
                     </a>
                     <div class="submenu active" id="articles-submenu">
-                        <a href="#" onclick="scrollToElement('article-1')">The Future of Leadership in the Digital Age</a>
+                        <a href="#" onclick="scrollToElement('article-1')">
+                            The Future of Leadership in the Digital Age
+                            <i class="fas fa-chevron-right arrow"></i>
+                        </a>
                     </div>
                 </li>
                 <li>
-                    <a href="#" class="nav-link" data-section="startup">
+                    <a href="#" class="nav-toggle" data-submenu="startup-submenu">
                         Startup <i class="fas fa-chevron-down chevron"></i>
                     </a>
                     <div class="submenu" id="startup-submenu">
-                        <a href="#" onclick="scrollToElement('startup-1')">AGT Ecosystem</a>
-                        <a href="#" onclick="scrollToElement('startup-2')">DirectiveAI</a>
+                        <a href="https://agtapp.com" target="_blank">
+                            AGT Ecosystem
+                            <i class="fas fa-chevron-right arrow"></i>
+                        </a>
+                        <a href="https://directiveai.org" target="_blank">
+                            DirectiveAI
+                            <i class="fas fa-chevron-right arrow"></i>
+                        </a>
                     </div>
                 </li>
                 <li>
-                    <a href="#" class="nav-link" data-section="books">
+                    <a href="#" class="nav-toggle" data-submenu="books-submenu">
                         Books <i class="fas fa-chevron-down chevron"></i>
                     </a>
                     <div class="submenu" id="books-submenu">
-                        <a href="#" onclick="scrollToElement('book-1')">AI Speaks. The World Listens.</a>
+                        <a href="https://www.amazon.com/dp/B0FFNCRFP4" target="_blank">
+                            AI Speaks. The World Listens.
+                            <i class="fas fa-chevron-right arrow"></i>
+                        </a>
                     </div>
                 </li>
                 <li>
-                    <a href="#" class="nav-link" data-section="podcast">
+                    <a href="#" class="nav-toggle" data-submenu="podcast-submenu">
                         Podcast <i class="fas fa-chevron-down chevron"></i>
                     </a>
                     <div class="submenu" id="podcast-submenu">
-                        <a href="#" onclick="scrollToElement('podcast-1')">Coming Soon</a>
-                    </div>
-                </li>
-                <li>
-                    <a href="#" class="nav-link" data-section="about">
-                        About <i class="fas fa-chevron-down chevron"></i>
-                    </a>
-                    <div class="submenu" id="about-submenu">
-                        <a href="#" onclick="scrollToElement('about-content')">About Alan Ferris</a>
+                        <a href="#" onclick="alert('Podcast coming soon!')">
+                            Coming Soon
+                            <i class="fas fa-chevron-right arrow"></i>
+                        </a>
                     </div>
                 </li>
             </ul>
@@ -548,13 +446,13 @@
                 <a href="mailto:alanferris@directiveai.org" title="Email">
                     <i class="fas fa-envelope"></i>
                 </a>
-                <a href="https://www.linkedin.com/in/alanxferris/" title="LinkedIn">
+                <a href="https://www.linkedin.com/in/alanxferris/" title="LinkedIn" target="_blank">
                     <i class="fab fa-linkedin"></i>
                 </a>
-                <a href="https://x.com/alanferrisx" title="Twitter">
+                <a href="https://x.com/alanferrisx" title="Twitter" target="_blank">
                     <i class="fab fa-twitter"></i>
                 </a>
-                <a href="https://github.com/alanferris" title="GitHub">
+                <a href="https://github.com/alanferris" title="GitHub" target="_blank">
                     <i class="fab fa-github"></i>
                 </a>
             </div>
@@ -568,7 +466,7 @@
             <section class="section" id="articles-section">
                 <h2 class="section-title">Latest Articles</h2>
 
-                <article class="article-card" id="article-1">
+                <div class="article-item" id="article-1">
                     <div class="article-meta">
                         <span><i class="fas fa-calendar"></i> July 1, 2025</span>
                         <span class="article-category">Leadership</span>
@@ -587,106 +485,62 @@
                             <i class="fas fa-share"></i> Share
                         </button>
                     </div>
-                </article>
-            </section>
-
-            <!-- Startup Section -->
-            <section class="section hidden" id="startup-section">
-                <h2 class="section-title">Startup Ecosystem</h2>
-                <div class="startup-grid">
-                    <a href="https://agtapp.com" class="startup-card" id="startup-1" target="_blank">
-                        <h3>AGT Ecosystem</h3>
-                        <p>Our flagship AI ecosystem platform that connects intelligent agents and transforms how businesses operate in the digital age.</p>
-                    </a>
-                    <a href="https://directiveai.org" class="startup-card" id="startup-2" target="_blank">
-                        <h3>DirectiveAI</h3>
-                        <p>The organization behind the innovation. We're building the future of artificial intelligence and its practical applications for businesses.</p>
-                    </a>
-                </div>
-            </section>
-
-            <!-- Books Section -->
-            <section class="section hidden" id="books-section">
-                <h2 class="section-title">Books</h2>
-                <a href="https://www.amazon.com/dp/B0FFNCRFP4" class="book-item" id="book-1" target="_blank">
-                    <div class="book-icon">
-                        <i class="fas fa-book"></i>
-                    </div>
-                    <div class="book-info">
-                        <h3>AI Speaks. The World Listens.</h3>
-                        <p>Available on Amazon Kindle</p>
-                    </div>
-                </a>
-            </section>
-
-            <!-- Podcast Section -->
-            <section class="section hidden" id="podcast-section">
-                <h2 class="section-title">Podcast</h2>
-                <div class="podcast-content" id="podcast-1">
-                    <div class="podcast-icon">
-                        <i class="fas fa-microphone"></i>
-                    </div>
-                    <p>Coming soon... Stay tuned for insights on leadership, innovation, and the future of business.</p>
-                </div>
-            </section>
-
-            <!-- About Section -->
-            <section class="section hidden" id="about-section">
-                <h2 class="section-title">About Alan Ferris</h2>
-                <div class="about-content" id="about-content">
-                    <p>
-                        Entrepreneur and thought leader with over a decade of experience transforming organizations through technology and innovation. 
-                        My approach focuses on simplicity, strategic vision, and developing cultures that inspire breakthrough results.
-                    </p>
-                    <p>
-                        I firmly believe that the future belongs to leaders who can bridge the gap between human potential and artificial intelligence. 
-                        Through my writing, speaking, and entrepreneurial ventures, I explore how businesses can thrive in an AI-driven world.
-                    </p>
-                    <p>
-                        Currently building the next generation of AI tools through DirectiveAI and AGT, while mentoring entrepreneurs and 
-                        sharing insights on the intersection of leadership, technology, and human potential.
-                    </p>
                 </div>
             </section>
         </div>
     </main>
 
     <script>
-        // Navigation functionality
+        // Navigation functionality for Articles only
         function showSection(sectionName) {
-            // Hide all sections
-            document.querySelectorAll('.section').forEach(section => {
-                section.classList.add('hidden');
-            });
-            
-            // Show selected section
-            document.getElementById(sectionName + '-section').classList.remove('hidden');
-            
-            // Update active nav link
-            document.querySelectorAll('.nav-link').forEach(link => {
-                link.classList.remove('active');
-            });
-            
-            // Hide all submenus
-            document.querySelectorAll('.submenu').forEach(submenu => {
-                submenu.classList.remove('active');
-            });
-            
-            // Show submenu for active section
-            const activeLink = document.querySelector(`[data-section="${sectionName}"]`);
-            activeLink.classList.add('active');
-            const submenu = document.getElementById(sectionName + '-submenu');
-            if (submenu) {
-                submenu.classList.add('active');
+            // Only show Articles section, others just toggle submenus
+            if (sectionName === 'articles') {
+                document.querySelectorAll('.section').forEach(section => {
+                    section.classList.add('hidden');
+                });
+                
+                document.getElementById('articles-section').classList.remove('hidden');
+                
+                // Update active nav link
+                document.querySelectorAll('.nav-link').forEach(link => {
+                    link.classList.remove('active');
+                });
+                
+                const activeLink = document.querySelector(`[data-section="articles"]`);
+                activeLink.classList.add('active');
             }
         }
 
-        // Add click event listeners to nav links
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', (e) => {
+        // Toggle submenu functionality
+        function toggleSubmenu(submenuId) {
+            const submenu = document.getElementById(submenuId);
+            const chevron = document.querySelector(`[data-submenu="${submenuId}"] .chevron`);
+            
+            if (submenu.classList.contains('active')) {
+                submenu.classList.remove('active');
+                chevron.style.transform = 'rotate(0deg)';
+            } else {
+                submenu.classList.add('active');
+                chevron.style.transform = 'rotate(180deg)';
+            }
+        }
+
+        // Add click event listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            // Articles nav link
+            const articlesLink = document.querySelector('[data-section="articles"]');
+            articlesLink.addEventListener('click', (e) => {
                 e.preventDefault();
-                const section = link.getAttribute('data-section');
-                showSection(section);
+                showSection('articles');
+            });
+
+            // Toggle links for other sections
+            document.querySelectorAll('.nav-toggle').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const submenuId = link.getAttribute('data-submenu');
+                    toggleSubmenu(submenuId);
+                });
             });
         });
 
@@ -760,8 +614,7 @@
         document.addEventListener('click', function(e) {
             if (window.innerWidth <= 768 && 
                 !e.target.closest('.sidebar') && 
-                !e.target.closest('.mobile-toggle') &&
-                !e.target.closest('.submenu a')) {
+                !e.target.closest('.mobile-toggle')) {
                 
                 const sidebar = document.getElementById('sidebar');
                 const overlay = document.getElementById('sidebar-overlay');
