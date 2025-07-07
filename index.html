@@ -27,7 +27,6 @@
             background: #fafafa;
         }
 
-        /* Main titles and subtitles styling */
         .main-title, .section-title {
             color: #222;
             display: inline;
@@ -37,7 +36,6 @@
             line-height: 50px;
         }
 
-        /* Sidebar */
         .sidebar {
             position: fixed;
             left: 0;
@@ -117,7 +115,6 @@
             transform: rotate(180deg);
         }
 
-        /* Submenu styles */
         .submenu {
             max-height: 0;
             overflow: hidden;
@@ -189,7 +186,6 @@
             transform: translateY(-2px);
         }
 
-        /* Main Content */
         .main-content {
             margin-left: 280px;
             min-height: 100vh;
@@ -201,7 +197,6 @@
             padding: 40px 30px;
         }
 
-        /* Section styles */
         .section {
             background: white;
             border-radius: 12px;
@@ -223,7 +218,6 @@
             letter-spacing: -0.5px;
         }
 
-        /* Articles Section - No more nested cards */
         .article-item {
             padding: 25px 0;
             border-bottom: 1px solid #e1e5e9;
@@ -306,7 +300,6 @@
             color: #e53e3e;
         }
 
-        /* Mobile Responsive */
         .mobile-toggle {
             display: none;
             position: fixed;
@@ -324,7 +317,6 @@
             box-shadow: 0 2px 10px rgba(0,0,0,0.2);
         }
 
-        /* Sidebar overlay for mobile */
         .sidebar-overlay {
             display: none;
             position: fixed;
@@ -379,14 +371,12 @@
     </style>
 </head>
 <body>
-    <!-- Sidebar overlay for mobile -->
     <div class="sidebar-overlay" id="sidebar-overlay" onclick="toggleSidebar()"></div>
 
     <button class="mobile-toggle" onclick="toggleSidebar()">
         <i class="fas fa-bars"></i>
     </button>
 
-    <!-- Sidebar -->
     <aside class="sidebar" id="sidebar">
         <div class="profile">
             <div class="profile-img" onclick="window.open('https://yt3.googleusercontent.com/SUB3aZm35eDVsvii14SbzUBvHaBUz9wQreowrjakDU6f235e9r3Yd-BPCXm29ASqIE_O254p0g=s160-c-k-c0x00ffffff-no-rj', '_blank')"></div>
@@ -400,6 +390,10 @@
                         Articles <i class="fas fa-chevron-down chevron"></i>
                     </a>
                     <div class="submenu active" id="articles-submenu">
+                        <a href="#" onclick="scrollToElement('article-2')">
+                            What Makes a Great CEO? The Case for Hybrid Leadership
+                            <i class="fas fa-chevron-right arrow"></i>
+                        </a>
                         <a href="#" onclick="scrollToElement('article-1')">
                             Why can ecosystems improve your life, but assistants can't?
                             <i class="fas fa-chevron-right arrow"></i>
@@ -465,12 +459,61 @@
         </div>
     </aside>
 
-    <!-- Main Content -->
     <main class="main-content">
         <div class="content-area">
-            <!-- Articles Section -->
             <section class="section" id="articles-section">
                 <h2 class="section-title">Latest Articles</h2>
+
+                <div class="article-item" id="article-2">
+                    <div class="article-meta">
+                        <span><i class="fas fa-calendar"></i> July 7, 2025</span>
+                        <span class="article-category">Leadership</span>
+                    </div>
+                    <h3 class="article-title">
+                        <a href="#" onclick="viewArticle('What Makes a Great CEO? The Case for Hybrid Leadership')">What Makes a Great CEO? The Case for Hybrid Leadership</a>
+                    </h3>
+                    <p class="article-excerpt">
+A groundbreaking study by Harvard Business School professor Raffaella Sadun and her team has revealed something that should make every board of directors think twice. After surveying nearly 5,000 CEOs across 42 middle-income countries, they discovered that companies are systematically hiring the wrong type of CEO, and it's costing them massive productivity losses.
+
+The research identifies two distinct types of CEOs: Manager CEOs, who focus on operations, production, and internal affairs, and Leader CEOs, who prioritize strategic interactions, external matters, and navigating uncertainty. Here's the key point: when companies need a leader but hire a manager, they see 20% lower productivity. When they need a manager but hire a leader, productivity drops by 15%. The mismatch is so widespread that correcting it could boost productivity by 9% across the entire sample.
+
+But here's where it gets interesting, and where I believe the study, while valuable, misses a crucial point.
+
+Productivity is the central factor that revolves around this adaptation. What affects productivity in a company? Achievement of objectives, project execution, and results. These achievements are defined as something already functional: technical improvements, new technologies, technological aspects for companies that operate with technology. For other types of businesses, it could be interpreted as logistics: purchasing, sales, or any process you define as personal productivity within your company.
+
+This analysis applies to current executives, those who aspire to be CEOs, those who had bad experiences in the role, and also to the teams that are led by these types of executives.
+
+Productivity represents specific factors within your company: logistics, new technologies, project execution. And this translates into something tangible like economic income. Even when we talk about productivity that doesn't directly cause income—like a more productive marketing campaign that provides greater reach and, therefore, more sales.
+
+The study summarizes an important factor of those who are not adapted: executives who don't fit what the company needs.
+
+While the study focuses on productivity, it also leaves the door open to infinite conclusions and questions. For example, it directly blames organizations, companies, and their culture for hiring decisions. It suggests that human resources departments are the ones making poor choices.
+
+What I see is different. It's not that the company is never responsible—we certainly need to find someone who fits the position. But the CEO is the head of the organization, and it's understandable why these errors occur. As the highest hierarchical level (after investors or partners), it becomes very complex for people below to choose a role that's above them. They simply don't fully understand it.
+
+Assuming this, and here's where I want to address teams, users, and CEOs: it's the responsibility of each person who takes on a CEO role to be a hybrid.
+
+The characteristics that a general manager should have versus a leader CEO must coexist. They must have business vision, strategy, and leadership that motivates and handles external affairs, but also strategic execution direction. We have to fulfill both functions.
+
+When cases of mismatch occur, for example, where we have people leading projects who are super motivational—they motivate the team a lot—but what we need is not motivation. Maybe the team is already motivated, or even motivation can distract the team from execution achievement. In this case, it acts as an obstacle that slows down the process, instead of what it should be: exerting pressure, focusing the team, keeping it concentrated on achieving the objective, providing quick feedback, etc.
+
+In the opposite case, when there's too much execution, we have a team that doesn't innovate, a team without creativity. Because it's constantly focused on achieving things within a conceptual framework or structured timeline. We don't give them freedom either. And that's where less productivity occurs, because maybe we can foster productivity by encouraging innovation.
+
+What I propose and how I visualize myself within my team at Directive AI is to force myself to be hybrid. If you're going to be the head of something, you have to be hybrid and adapt to both aspects. You can perfectly have a business idea, entrepreneurial vision, creativity, and leadership spirit that motivates your team without problem. But it's also important that you can lead it under a structure, under the achievement of objectives, without falling into cynicism.
+
+Here we enter another problem. In the search for this hybrid, some generate mistreatment toward employees, which is never the case and should never be considered even an option. It's good to always maintain an open perception to identify these types of situations.
+
+Stop looking for the perfect "manager" or "leader" CEO. Instead, develop leaders who can adapt their style to what the company needs at any given moment. That's where true productivity gains occur.
+                    </p>
+                    <div class="article-actions">
+                        <button class="action-btn like-btn" onclick="toggleLike(this)">
+                            <i class="far fa-heart"></i> <span>0</span>
+                        </button>
+                        <button class="action-btn" onclick="shareArticle('[TÍTULO DEL NUEVO ARTÍCULO]')">
+                            <i class="fas fa-share"></i> Share
+                        </button>
+                    </div>
+                </div>
 
                 <div class="article-item" id="article-1">
                     <div class="article-meta">
@@ -511,9 +554,7 @@ This doesn't just add value; it provides real solutions. And this isn't just a s
     </main>
 
     <script>
-        // Navigation functionality for Articles only
         function showSection(sectionName) {
-            // Only show Articles section, others just toggle submenus
             if (sectionName === 'articles') {
                 document.querySelectorAll('.section').forEach(section => {
                     section.classList.add('hidden');
@@ -521,7 +562,6 @@ This doesn't just add value; it provides real solutions. And this isn't just a s
                 
                 document.getElementById('articles-section').classList.remove('hidden');
                 
-                // Update active nav link
                 document.querySelectorAll('.nav-link').forEach(link => {
                     link.classList.remove('active');
                 });
@@ -531,7 +571,6 @@ This doesn't just add value; it provides real solutions. And this isn't just a s
             }
         }
 
-        // Toggle submenu functionality
         function toggleSubmenu(submenuId) {
             const submenu = document.getElementById(submenuId);
             const chevron = document.querySelector(`[data-submenu="${submenuId}"] .chevron`);
@@ -545,16 +584,13 @@ This doesn't just add value; it provides real solutions. And this isn't just a s
             }
         }
 
-        // Add click event listeners
         document.addEventListener('DOMContentLoaded', function() {
-            // Articles nav link
             const articlesLink = document.querySelector('[data-section="articles"]');
             articlesLink.addEventListener('click', (e) => {
                 e.preventDefault();
                 showSection('articles');
             });
 
-            // Toggle links for other sections
             document.querySelectorAll('.nav-toggle').forEach(link => {
                 link.addEventListener('click', (e) => {
                     e.preventDefault();
@@ -564,7 +600,6 @@ This doesn't just add value; it provides real solutions. And this isn't just a s
             });
         });
 
-        // Scroll to element function
         function scrollToElement(elementId) {
             const element = document.getElementById(elementId);
             if (element) {
@@ -573,7 +608,6 @@ This doesn't just add value; it provides real solutions. And this isn't just a s
                     block: 'start'
                 });
                 
-                // Close sidebar on mobile after clicking
                 if (window.innerWidth <= 768) {
                     toggleSidebar();
                 }
@@ -581,10 +615,9 @@ This doesn't just add value; it provides real solutions. And this isn't just a s
         }
 
         function viewArticle(title) {
-            alert(`Viewing: ${title}\n\nIn a real implementation, this would open the full article page.`);
+            alert(`Viewing: ${title}\n\nSOON.`);
         }
 
-        // Like functionality
         function toggleLike(button) {
             const icon = button.querySelector('i');
             const count = button.querySelector('span');
@@ -601,7 +634,6 @@ This doesn't just add value; it provides real solutions. And this isn't just a s
             }
         }
 
-        // Share functionality
         function shareArticle(title) {
             if (navigator.share) {
                 navigator.share({
@@ -610,7 +642,6 @@ This doesn't just add value; it provides real solutions. And this isn't just a s
                     url: window.location.href
                 });
             } else {
-                // Fallback for browsers that don't support Web Share API
                 const url = window.location.href;
                 const text = `Check out this article: ${title} - ${url}`;
                 navigator.clipboard.writeText(text).then(() => {
@@ -621,7 +652,6 @@ This doesn't just add value; it provides real solutions. And this isn't just a s
             }
         }
 
-        // Mobile sidebar toggle
         function toggleSidebar() {
             const sidebar = document.getElementById('sidebar');
             const overlay = document.getElementById('sidebar-overlay');
@@ -630,7 +660,6 @@ This doesn't just add value; it provides real solutions. And this isn't just a s
             overlay.classList.toggle('active');
         }
 
-        // Close sidebar when clicking outside on mobile
         document.addEventListener('click', function(e) {
             if (window.innerWidth <= 768 && 
                 !e.target.closest('.sidebar') && 
